@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
     <div class="container">
         <a class="navbar-brand fw-bold d-flex align-items-center" href="index.php">
-            <img src="img/logo.png" alt="Mkasi Logo" width="40" height="40" class="me-2"> 
+            <img src="img/logo.png" alt="MKasi Logo" class="navbar-logo me-2"> 
             MKasiExchange <span class="text-warning ms-1">C2C</span>
         </a>
         
