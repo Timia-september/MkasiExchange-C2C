@@ -1,7 +1,11 @@
 <?php
 session_start();
 include 'db_connect.php';
-$result = mysqli_query($conn, "SELECT * FROM products ORDER BY created_at DESC");
+$query = "SELECT products.*, users.phone 
+          FROM products 
+          JOIN users ON products.user_id = users.user_id 
+          ORDER BY created_at DESC";
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +32,14 @@ $result = mysqli_query($conn, "SELECT * FROM products ORDER BY created_at DESC")
                             </div>
                             <h5 class="fw-bold"><?php echo $row['item_name']; ?></h5>
                             <p class="text-muted small"><?php echo $row['description']; ?></p>
-                            <a href="#" class="btn btn-kasi w-100">Chat with Seller</a>
+        
+                            <a href="https://wa.me/<?php echo $row['phone'] ?>?text=is%20the%20<?php echo urlencode($row['item_name']); ?>%20still%20available?"
+                                class="btn btn-kasi w-100" 
+                                target="_blank">
+                                Chat with Seller
+                            </a>
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>
