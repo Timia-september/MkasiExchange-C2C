@@ -20,31 +20,27 @@ $result = mysqli_query($conn, $query);
 
     <div class="container mt-5">
         <h2 class="fw-bold mb-4">Marketplace Nearby</h2>
-        <div class="row">
-            <?php while($row = mysqli_fetch_assoc($result)): ?>
-                <div class="col-md-4 mb-4">
-                    <div class="card kasi-card h-100 shadow-sm">
-                        <img src="<?php echo $row['image_path']; ?>" class="product-img" alt="item">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="price-badge">R<?php echo $row['price']; ?></span>
-                                <small class="text-muted"><?php echo $row['location']; ?></small>
-                            </div>
-                            <h5 class="fw-bold"><?php echo $row['item_name']; ?></h5>
-                            <p class="text-muted small"><?php echo $row['description']; ?></p>
-        
-                            <a href="https://wa.me/<?php echo $row['phone'] ?>?text=is%20the%20<?php echo urlencode($row['item_name']); ?>%20still%20available?"
-                                class="btn btn-kasi w-100" 
-                                target="_blank">
-                                Chat with Seller
-                            </a>
+ <div class="row">
+        <?php while($row = mysqli_fetch_assoc($result)): ?>
+            <div class="col-6 col-md-4 mb-4">
+                <div class="card kasi-card shadow-sm">
+                    <img src="<?php echo $row['image_path']; ?>" class="product-img" alt="item">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="price-badge">R<?php echo $row['price']; ?></span>
+                            <small class="text-muted"><?php echo $row['location']; ?></small>
                         </div>
-                    </div>
-                        </div>
+                        <h5 class="fw-bold"><?php echo $row['item_name']; ?></h5>
+                        <p class="text-muted small"><?php echo $row['description']; ?></p>
+                        
+                        <a href="https://wa.me/<?php echo $row['phone'] ?>?text=is%20the%20<?php echo urlencode($row['item_name']); ?>%20still%20available?" 
+                           class="btn btn-kasi w-100" 
+                           target="_blank">
+                           Chat with Seller
+                        </a>
                     </div>
                 </div>
-            <?php endwhile; ?>
-        </div>
-    </div>
-</body>
+            </div>
+        <?php endwhile; ?>
+    </div> </div> </body>
 </html>
