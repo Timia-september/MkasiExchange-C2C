@@ -20,10 +20,10 @@ $result = mysqli_query($conn, $query);
 
     <div class="container mt-5">
         <h2 class="fw-bold mb-4">Marketplace Nearby</h2>
- <div class="row">
+    <div class="row">
         <?php while($row = mysqli_fetch_assoc($result)): ?>
             <div class="col-6 col-md-4 mb-4">
-                <div class="card kasi-card shadow-sm">
+                <div class="card kasi-card shadow-sm h-100">
                     <img src="<?php echo $row['image_path']; ?>" class="product-img" alt="item">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-2">
@@ -34,13 +34,18 @@ $result = mysqli_query($conn, $query);
                         <p class="text-muted small"><?php echo $row['description']; ?></p>
                         
                         <a href="https://wa.me/<?php echo $row['phone'] ?>?text=is%20the%20<?php echo urlencode($row['item_name']); ?>%20still%20available?" 
-                           class="btn btn-kasi w-100" 
+                           class="btn btn-kasi w-100 mb-2" 
                            target="_blank">
                            Chat with Seller
                         </a>
+                        <form action="initiate_escrow.php" method="POST">
+                            <input type="hidden" name="item_id" value="<?php echo $row['product_id']; ?>">
+                            <button type="submit" class="btn btn-outline-success w-100 mt-2">
+                            <i class="bi bi-shield-lock"></i> Secure with Escrow
+                        </button>
+                        </form>
                     </div>
                 </div>
             </div>
         <?php endwhile; ?>
-    </div> </div> </body>
-</html>
+    </div>
