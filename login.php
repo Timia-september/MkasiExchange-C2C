@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'db_connect.php';
+include 'languages.php';
 
 if (isset($_POST['login_btn'])) {
     $uname = mysqli_real_escape_string($conn, $_POST['username']);
@@ -43,20 +44,20 @@ if (isset($_POST['login_btn'])) {
             <div class="col-md-4">
                 <div class="card shadow border-0">
                     <div class="card-body p-4">
-                        <h3 class="text-center mb-4">Login</h3>
+                        <h3 class="text-center mb-4"><?php echo $words['login_title']; ?></h3>
                         <form method="POST">
                             <div class="mb-3">
-                                <label class="form-label">Username</label>
+                                <label class="form-label"><?php echo $words['username']; ?></label>
                                 <input type="text" name="username" class="form-control" placeholder="Enter username" required>
                             </div>
                             <div class="mb-4">
-                                <label class="form-label">Password</label>
+                                <label class="form-label"><?php echo $words['password']; ?></label>
                                 <input type="password" name="password" class="form-control" placeholder="Enter password" required>
                             </div>
-                            <button type="submit" name="login_btn" class="btn btn-primary w-100 py-2">Sign In</button>
+                            <button type="submit" name="login_btn" class="btn btn-primary w-100 py-2"><?php echo $words['signin_btn']; ?></button>
                         </form>
                         <div class="text-center mt-3">
-                            <small>Need an account? <a href="register.php">Register here</a></small>
+                            <small><?php echo $words['need_account']; ?></small>
                         </div>
                     </div>
                 </div>

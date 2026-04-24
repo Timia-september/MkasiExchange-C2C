@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'db_connect.php';
+include 'languages.php';
 $query = "SELECT products.*, users.phone 
           FROM products 
           JOIN users ON products.user_id = users.user_id 
@@ -19,7 +20,7 @@ $result = mysqli_query($conn, $query);
     <?php include 'navbar.php'; ?>
 
     <div class="container mt-5">
-        <h2 class="fw-bold mb-4">Marketplace Nearby</h2>
+        <h2 class="fw-bold mb-4"><?php echo $words['welcome']; ?></h2>
     <div class="row">
         <?php while($row = mysqli_fetch_assoc($result)): ?>
             <div class="col-6 col-md-4 mb-4">
@@ -36,12 +37,12 @@ $result = mysqli_query($conn, $query);
                         <a href="https://wa.me/<?php echo $row['phone'] ?>?text=is%20the%20<?php echo urlencode($row['item_name']); ?>%20still%20available?" 
                            class="btn btn-kasi w-100 mb-2" 
                            target="_blank">
-                           Chat with Seller
+                            <?php echo $words['chat_btn']; ?>
                         </a>
                         <form action="initiate_escrow.php" method="POST">
                             <input type="hidden" name="item_id" value="<?php echo $row['product_id']; ?>">
                             <button type="submit" class="btn btn-outline-success w-100 mt-2">
-                            <i class="bi bi-shield-lock"></i> Secure with Escrow
+                            <i class="bi bi-shield-lock"></i> <?php echo $words['secure_btn']; ?>
                         </button>
                         </form>
                     </div>

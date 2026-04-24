@@ -11,6 +11,12 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav ms-auto align-items-center">
+        
+                <div class="d-flex me-lg-3 my-2 my-lg-0">
+                    <a href="change_lang.php?l=en" class="btn btn-sm btn-outline-light me-1">EN</a>
+                    <a href="change_lang.php?l=zu" class="btn btn-sm btn-outline-light me-1">ZU</a>
+                    <a href="change_lang.php?l=xh" class="btn btn-sm btn-outline-light">XH</a>
+                </div>
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <a class="nav-link fw-bold px-3" href="sell.php">+ Sell Something</a>
                     <a class="nav-link fw-bold px-3" href="logout.php">Logout</a>
