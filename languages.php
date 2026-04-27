@@ -10,7 +10,11 @@ $lang = [
         'username' => 'Username',
         'password' => 'Password',
         'signin_btn' => 'Sign In',
-        'need_account' => 'Need an account? Register here'
+        'need_account' => 'Need an account? Register here',
+        'nav_login' => 'Login',
+        'nav_register' => 'Register',
+        'nav_sell' => '+ Sell Something',
+        'nav_logout' => 'Logout',
     ],
 
     'zu' => [
@@ -23,7 +27,11 @@ $lang = [
         'username' => 'Igama lomsebenzisi',
         'password' => 'Inombolo yemfihlo',
         'signin_btn' => 'Ngena khona manje',
-        'need_account' => 'Awunayo i-akhawunti? Bhalisa lapha'
+        'need_account' => 'Awunayo i-akhawunti? Bhalisa lapha',
+        'nav_login' => 'Ngena',
+        'nav_register' => 'Bhalisa',
+        'nav_sell' => '+ Dayisa Okuthile',
+        'nav_logout' => 'Phuma',
     ],
 
     'xh' => [
@@ -36,7 +44,11 @@ $lang = [
         'username' => 'Igama lomsebenzisi',
         'password' => 'Inombolo yokungena',
         'signin_btn' => 'Ngena ngoku',
-        'need_account' => 'Awunayo i-akhawunti? Bhalisa apha'
+        'need_account' => 'Awunayo i-akhawunti? Bhalisa apha',
+        'nav_login' => 'Ngena',
+        'nav_register' => 'Bhalisa',
+        'nav_sell' => '+ Thengisa Into',
+        'nav_logout' => 'Phuma',
     ]
 ];
 

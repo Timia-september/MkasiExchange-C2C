@@ -18,11 +18,11 @@
                     <a href="change_lang.php?l=xh" class="btn btn-sm btn-outline-light">XH</a>
                 </div>
                 <?php if(isset($_SESSION['user_id'])): ?>
-                    <a class="nav-link fw-bold px-3" href="sell.php">+ Sell Something</a>
-                    <a class="nav-link fw-bold px-3" href="logout.php">Logout</a>
+                    <a class="nav-link fw-bold px-3" href="sell.php"><?php echo $words['nav_sell']; ?></a>
+                    <a class="nav-link fw-bold px-3" href="logout.php"><?php echo $words['nav_logout']; ?></a>
                 <?php else: ?>
-                    <a class="nav-link" href="login.php">Login</a>
-                    <a class="nav-link btn btn-warning text-dark ms-lg-2 px-3" href="register.php">Register</a>
+                    <a class="nav-link" href="login.php"><?php echo $words['nav_login']; ?></a>
+                    <a class="nav-link fw-bold px-3" href="register.php"><?php echo $words['nav_register']; ?></a>
                 <?php endif; ?>
             </div>
         </div>
