@@ -15,6 +15,13 @@ $lang = [
         'nav_register' => 'Register',
         'nav_sell' => '+ Sell Something',
         'nav_logout' => 'Logout',
+        'location' => 'Location',
+        'available' => 'Still available?',
+        'trade_complete' => 'Trade Successful!',
+        'status_sold' => 'The product status has been updated to SOLD.',
+        'back_market' => 'Back to Market',
+        'err_pass' => 'Incorrect Password',
+        'err_user' => 'User not found',
     ],
 
     'zu' => [
@@ -32,6 +39,13 @@ $lang = [
         'nav_register' => 'Bhalisa',
         'nav_sell' => '+ Dayisa Okuthile',
         'nav_logout' => 'Phuma',
+        'location' => 'Indawo',
+        'available' => 'Ikhona namanje?',
+        'trade_complete' => 'Uhwebo luphumelele!',
+        'status_sold' => 'Isimo somkhiqizo sibuyekeziwe saba ngu-KUDAYISIWE.',
+        'back_market' => 'Buyela Emakethe',
+        'err_pass' => 'Inombolo yemfihlo ayilungile',
+        'err_user' => 'Umsebenzisi akatholakali',
     ],
 
     'xh' => [
@@ -49,7 +63,13 @@ $lang = [
         'nav_register' => 'Bhalisa',
         'nav_sell' => '+ Thengisa Into',
         'nav_logout' => 'Phuma',
-    ]
+        'location' => 'Indawo',
+        'available' => 'Isafumaneka?',
+        'trade_complete' => 'Urwebo luphumelele!',
+        'status_sold' => 'Ubume bemveliso buhlaziyiwe baze ba-THENGISWA.',
+        'back_market' => 'Buyela kwindawo yoThengiso',
+        'err_pass' => 'Inombolo yokungena ayichanekanga',
+        'err_user' => 'Umsebenzisi akafumaneki',
 ];
 
 

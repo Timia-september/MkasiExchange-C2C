@@ -23,10 +23,10 @@ if (isset($_POST['login_btn'])) {
                 header("Location: index.php");
             }
         } else {
-            echo "<script>alert('Incorrect Password');</script>";
+           echo "<script>alert('" . $words['err_pass'] . "');</script>";
         }
     } else {
-        echo "<script>alert('User not found');</script>";
+        echo "<script>alert('" . $words['err_user'] . "');</script>";
     }
 }
 ?>

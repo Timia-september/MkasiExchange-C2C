@@ -29,12 +29,14 @@ $result = mysqli_query($conn, $query);
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <span class="price-badge">R<?php echo $row['price']; ?></span>
-                            <small class="text-muted"><?php echo $row['location']; ?></small>
+                            <small class="text-muted">
+                                <?php echo $words['location']; ?>: <?php echo $row['location']; ?>
+                            </small>
                         </div>
                         <h5 class="fw-bold"><?php echo $row['item_name']; ?></h5>
                         <p class="text-muted small"><?php echo $row['description']; ?></p>
                         
-                        <a href="https://wa.me/<?php echo $row['phone'] ?>?text=is%20the%20<?php echo urlencode($row['item_name']); ?>%20still%20available?" 
+                        <a href="https://wa.me/<?php echo $row['phone'] ?>?text=<?php echo urlencode($row['item_name'] . " - " . $words['available']); ?>"`
                            class="btn btn-kasi w-100 mb-2" 
                            target="_blank">
                             <?php echo $words['chat_btn']; ?>
