@@ -1,5 +1,7 @@
 <?php
+session_start();   
 include 'db_connect.php'; 
+include 'languages.php';           
 
 if (isset($_POST['register_btn'])) {
     $uname = mysqli_real_escape_string($conn, $_POST['username']);
@@ -18,7 +20,7 @@ if (isset($_POST['register_btn'])) {
     $run   = mysqli_query($conn, $query);
     
     if ($run) {
-        echo "<script>alert('Registration Successful! Welcome to the Kasi Economy.'); window.location='login.php';</script>";
+        echo "<script>alert('" . $words['success_msg'] . "'); window.location='login.php';</script>";
     } else {
         echo "Error: " . mysqli_error($conn);
     }
@@ -38,30 +40,30 @@ if (isset($_POST['register_btn'])) {
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4 card p-4 shadow-sm">
-                <h3 class="text-center">Create Account</h3>
+                <h3 class="text-center"><?php echo $words['nav_register']; ?></h3>
                 <hr>
                 <form method="POST">
                     <div class="mb-3">
-                        <label>Username</label>
+                        <label><?php echo $words['username']; ?></label>
                         <input type="text" name="username" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label>Password</label>
+                        <label><?php echo $words['password']; ?></label>
                         <input type="password" name="password" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label>Phone Number (for WhatsApp)</label>
+                        <label><?php echo $words['phone_label']; ?></label>
                         <input type="text" name="phone" class="form-control" placeholder="e.g. 27712345678" required>
                     </div>
 
                     <div class="mb-3">
-                        <label>Admin Secret Key (Optional)</label>
+                        <label><?php echo $words['admin_label']; ?></label>
                         <input type="text" name="admin_key" class="form-control" placeholder="Leave blank for standard">
-                        <small class="text-muted">Only for authorized staff.</small>
+                        <small class="text-muted"><?php echo $words['admin_note']; ?></small>
                     </div>
 
-                    <button type="submit" name="register_btn" class="btn btn-primary w-100">Sign Up</button>
+                    <button type="submit" name="register_btn" class="btn btn-primary w-100"><?php echo $words['nav_register']; ?></button>
                 </form>
             </div>
         </div>

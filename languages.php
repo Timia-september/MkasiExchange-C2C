@@ -22,6 +22,9 @@ $lang = [
         'back_market' => 'Back to Market',
         'err_pass' => 'Incorrect Password',
         'err_user' => 'User not found',
+        'phone_label' => 'Phone Number (for WhatsApp)',
+        'admin_label' => 'Admin Secret Key (Optional)',
+        'admin_note' => 'Only for authorized staff.',
     ],
 
     'zu' => [
@@ -46,6 +49,9 @@ $lang = [
         'back_market' => 'Buyela Emakethe',
         'err_pass' => 'Inombolo yemfihlo ayilungile',
         'err_user' => 'Umsebenzisi akatholakali',
+        'phone_label' => 'Inombolo yocingo (ye-WhatsApp)',
+        'admin_label' => 'Ikhodi yemfihlo yomlawuli (Ongakukhetha)',
+        'admin_note' => 'Okwabasebenzi abagunyaziwe kuphela.',
     ],
 
     'xh' => [
@@ -70,7 +76,11 @@ $lang = [
         'back_market' => 'Buyela kwindawo yoThengiso',
         'err_pass' => 'Inombolo yokungena ayichanekanga',
         'err_user' => 'Umsebenzisi akafumaneki',
-];
+        'phone_label' => 'Inombolo yemfoni (ye-WhatsApp)',
+        'admin_label' => 'Isitshixo se-Admin (Ungakhetha)',
+        'admin_note' => 'Yabasebenzi abagunyazisiweyo kuphela.',
+    ],
+];    
 
 
 $current_lang = $_SESSION['lang'] ?? 'en';
