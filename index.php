@@ -15,6 +15,7 @@ $result = mysqli_query($conn, $query);
     <title>MKasiExchange</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body class="bg-light">
     <?php include 'navbar.php'; ?>
@@ -25,7 +26,7 @@ $result = mysqli_query($conn, $query);
         <?php while($row = mysqli_fetch_assoc($result)): ?>
             <div class="col-6 col-md-4 mb-4">
                 <div class="card kasi-card shadow-sm h-100">
-                    <img src="<?php echo $row['image_path']; ?>" class="product-img" alt="item">
+                    <img src="<?php echo $row['image_path']; ?>" class="product-img" alt="item" loading="lazy">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <span class="price-badge">R<?php echo $row['price']; ?></span>
@@ -52,3 +53,10 @@ $result = mysqli_query($conn, $query);
             </div>
         <?php endwhile; ?>
     </div>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+  }
+</script>
+</body>
+</html>

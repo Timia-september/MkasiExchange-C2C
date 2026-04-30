@@ -37,6 +37,7 @@ if (isset($_POST['login_btn'])) {
     <title>Login | MKasiExchange</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=1.1">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body class="bg-light">
     <?php include 'navbar.php'; ?> <div class="container mt-5">
@@ -64,5 +65,10 @@ if (isset($_POST['login_btn'])) {
             </div>
         </div>
     </div>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
 </body>
 </html>
